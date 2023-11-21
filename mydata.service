@@ -1,0 +1,16 @@
+[Unit]
+Description=Telegram bot 'my Bot'
+After=network.target
+
+[Service]
+User=root
+Group=root
+
+WorkingDirectory=/home/telegrambot_mydata/
+Environment="PYTHONPATH=/home/telegrambot_mydata"
+ExecStart=/home/telegrambot_mydata/venv/bin/python /home/telegrambot_mydata/app.py
+RestartSec=10
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
